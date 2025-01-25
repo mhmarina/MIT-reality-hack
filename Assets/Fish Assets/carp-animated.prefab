@@ -115,4 +115,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 0
   amplitude: 1
-  forwardSpeed: 5
+  orbitSpeed: 0.5
+  radius: 10
