@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // this is an internal score
+    // this decides which scene will trigger at the end
+    public int currScore = 0;
+
     void Start()
     {
         
