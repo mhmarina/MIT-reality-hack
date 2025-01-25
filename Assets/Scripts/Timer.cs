@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,11 +18,21 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeRemaining > 0)
+        if (timeRemaining > 0 && !isStopped)
         {
-            isStopped = false;
             timeRemaining -= Time.deltaTime;
+            Debug.Log(timeRemaining);
         }
-        else { isStopped = true; }
+        else if (!isStopped)
+        {
+            isStopped = true;
+            onTimeStop();
+        }
+    }
+
+    void onTimeStop()
+    {
+        //do something
+        this.gameObject.SetActive(false);
     }
 }
