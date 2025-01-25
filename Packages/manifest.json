@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.meta.xr.sdk.interaction.ovr.samples": "69.0.1",
+    "com.unity.cloud.gltfast": "6.10.1",
     "com.unity.collab-proxy": "2.6.0",
     "com.unity.feature.development": "1.0.1",
     "com.unity.inputsystem": "1.11.2",
@@ -16,6 +17,7 @@
     "com.unity.xr.meta-openxr": "1.0.1",
     "com.unity.xr.oculus": "4.4.0",
     "com.unity.xr.openxr": "1.13.2",
+    "org.khronos.unitygltf": "2.14.1",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -47,5 +49,14 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "Needle",
+      "url": "https://packages.needle.tools",
+      "scopes": [
+        "org.khronos.unitygltf"
+      ]
+    }
+  ]
 }
