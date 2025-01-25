@@ -6,8 +6,8 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] float maxTime = 30f;
-    [HideInInspector] float timeRemaining;
+    [SerializeField] public float maxTime = 30f;
+    public float timeRemaining;
     [HideInInspector] bool isStopped = false;
 
     void Start()
