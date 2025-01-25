@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CircleAlignment : MonoBehaviour
 {
-
     public GameObject[] objects; // objects in circle
     public float radius = 5f; // radius of circle
 
