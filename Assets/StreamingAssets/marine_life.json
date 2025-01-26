@@ -2,7 +2,7 @@
     "marine_life": [
         {
             "key": "shark",
-            "name": "Shark",
+            "name": "Killer Whale",
             "origin": "Ocean worldwide",
             "type": "Fish",
             "threats": "Overfishing, plastic pollution, habitat loss"

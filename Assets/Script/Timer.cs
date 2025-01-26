@@ -1,38 +1,52 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] public float maxTime = 30f;
-    public float timeRemaining;
-    [HideInInspector] bool isStopped = false;
+    [SerializeField] public float maxTime = 30f; // Total time in seconds
+    public float timeRemaining; // Remaining time
+    [HideInInspector] bool isStopped = false; // Flag to indicate if the timer is stopped
+
+    public ObjectInteraction objectInteraction; // Reference to the score logic script
+    public GameObject objectA; // Object to display if the score is greater than 10
+    public GameObject objectB; // Object to display if the score is 10 or less
 
     void Start()
     {
-        timeRemaining = maxTime;   
+        timeRemaining = maxTime; // Initialize the timer with the maximum time
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timeRemaining > 0 && !isStopped)
         {
-            timeRemaining -= Time.deltaTime;
-            Debug.Log(timeRemaining);
+            timeRemaining -= Time.deltaTime; // Decrease remaining time by delta time
         }
         else if (!isStopped)
         {
-            isStopped = true;
-            onTimeStop();
+            isStopped = true; // Stop the timer
+            onTimeStop(); // Handle actions when time stops
         }
     }
 
     void onTimeStop()
     {
-        //do something
-        this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false); // Deactivate the timer object
+
+        // Get the final score from ObjectInteraction
+        int finalScore = objectInteraction.score;
+        Debug.Log($"Final Score: {finalScore}"); // Log the final score
+
+        // Display Object A or Object B based on the score
+        if (finalScore > 10)
+        {
+            objectA.SetActive(true); // Activate Object A
+            Debug.Log("Score is greater than 10, displaying Object A.");
+        }
+        else
+        {
+            objectB.SetActive(true); // Activate Object B
+            Debug.Log("Score is 10 or less, displaying Object B.");
+        }
     }
 }

@@ -2,20 +2,22 @@
 
 public class ObjectInteraction : MonoBehaviour
 {
-    public Bubbles foams; // 引用 Foams，用于生成物体
+    public Bubbles foams; // Reference to Foams, used for spawning objects
 
-    private int spawnIndex = 0; // 当前的生成计数（1-2-3 循环）
+    private int spawnIndex = 0; // Current spawn index (1-2-3 loop)
+    public int score = 0; // Public score variable to track points
 
     private void OnTriggerEnter(Collider other)
     {
-        // 检测触发的物体标签
+        // Check if the triggered object has the tag "Recyclable"
         if (other.CompareTag("Recyclable"))
         {
-            spawnIndex = (spawnIndex + 1) % 3; // 按顺序循环计数（0-1-2-0）
-            foams.SpawnObject(spawnIndex); // 调用 Foams 的生成方法
-            Destroy(other.gameObject); // 销毁放入垃圾桶的物体
+            spawnIndex = (spawnIndex + 1) % 3; // Loop the spawn index (0-1-2-0)
+            foams.SpawnObject(spawnIndex); // Call the spawn method from Foams
+            Destroy(other.gameObject); // Destroy the object placed in the trash
 
-            Debug.Log($"Spawned Object Index: {spawnIndex + 1}"); // 输出当前生成的物体索引
+            score++; // Increment the score by 1
+            Debug.Log($"Spawned Object Index: {spawnIndex + 1}, Score: {score}"); // Log current spawn index and score
         }
     }
 }
