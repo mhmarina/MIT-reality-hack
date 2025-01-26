@@ -10,8 +10,11 @@ public class FadeToBlack : MonoBehaviour
 
     private void Update()
     {
-        Color color = screen.color;
-        color.a = color.a + 0.1f * Time.deltaTime;
-        screen.color = color;
+        if(screen.color.a < 1)
+        {
+            Color color = screen.color;
+            color.a = color.a + 0.1f * Time.deltaTime;
+            screen.color = color;
+        }
     }
 }
