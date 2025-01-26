@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Aquarium.unity
     guid: 387bedb9d5e97794e9df7e03ae994f5c
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 88d06516e13818949b779f4662f28757
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
