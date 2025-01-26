@@ -363,6 +363,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!20 &1447021959 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7277802327414017196, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+  m_PrefabInstance: {fileID: 2779669268269126897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1548251155
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2047768706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1547,6 +1552,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Paul
       objectReference: {fileID: 0}
+    - target: {fileID: 6123345127524325327, guid: c2374f39bc83d9443b22bab06faa04d4, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1447021959}
+    - target: {fileID: 6123345127524325327, guid: c2374f39bc83d9443b22bab06faa04d4, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123345127524325327, guid: c2374f39bc83d9443b22bab06faa04d4, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6391597267426533904, guid: c2374f39bc83d9443b22bab06faa04d4, type: 3}
       propertyPath: m_Name
       value: Dialogue-Scene1
@@ -1554,6 +1571,10 @@ PrefabInstance:
     - target: {fileID: 8031982636990275535, guid: c2374f39bc83d9443b22bab06faa04d4, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656852089281085710, guid: c2374f39bc83d9443b22bab06faa04d4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 88
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
