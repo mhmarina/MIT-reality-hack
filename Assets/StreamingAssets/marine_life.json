@@ -1,0 +1,18 @@
+{
+    "marine_life": [
+        {
+            "key": "shark",
+            "name": "Shark",
+            "origin": "Ocean worldwide",
+            "type": "Fish",
+            "threats": "Overfishing, plastic pollution, habitat loss"
+        },
+        {
+            "key": "jellyfish",
+            "name": "Jellyfish",
+            "origin": "Deep ocean",
+            "type": "Invertebrate",
+            "threats": "Climate change, water pollution"
+        }
+    ]
+}
