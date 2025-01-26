@@ -13,6 +13,62 @@
             "origin": "Deep ocean",
             "type": "Invertebrate",
             "threats": "Climate change, water pollution"
+        },
+        {
+            "key": "carp",
+            "name": "Carp",
+            "origin": "Deep ocean",
+            "type": "Invertebrate",
+            "threats": "Climate change, water pollution"
+        },
+        {
+            "key": "guppy",
+            "name": "Guppy",
+            "origin": "Deep ocean",
+            "type": "Invertebrate",
+            "threats": "Climate change, water pollution"
+        },
+        {
+            "key": "red_discus",
+            "name": "Red Discus",
+            "origin": "Deep ocean",
+            "type": "Invertebrate",
+            "threats": "Climate change, water pollution"
+        },
+        {
+            "key": "bass",
+            "name": "Bass",
+            "origin": "Deep ocean",
+            "type": "Invertebrate",
+            "threats": "Climate change, water pollution"
+        },
+        {
+            "key": "bull_trout",
+            "name": "Bull Trout",
+            "origin": "Deep ocean",
+            "type": "Invertebrate",
+            "threats": "Climate change, water pollution"
+        },
+        {
+            "key": "titan_holefish",
+            "name": "Titan Holefish",
+            "origin": "Deep ocean",
+            "type": "Invertebrate",
+            "threats": "Climate change, water pollution"
+        },
+        {
+            "key": "betta",
+            "name": "Betta Fish",
+            "origin": "Deep ocean",
+            "type": "Invertebrate",
+            "threats": "Climate change, water pollution"
+        },
+        {
+            "key": "crown_jellyfish",
+            "name": "Crown Jellyfish",
+            "origin": "Deep ocean",
+            "type": "Invertebrate",
+            "threats": "Climate change, water pollution"
         }
     ]
 }
