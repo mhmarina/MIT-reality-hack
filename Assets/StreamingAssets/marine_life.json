@@ -3,16 +3,72 @@
         {
             "key": "shark",
             "name": "Killer Whale",
-            "origin": "Ocean worldwide",
-            "type": "Fish",
-            "threats": "Overfishing, plastic pollution, habitat loss"
+            "origin": "Oceans worldwide, especially polar regions",
+            "type": "Mammal",
+            "threats": "Pollution, noise disturbance, prey depletion"
         },
         {
             "key": "jellyfish",
             "name": "Jellyfish",
-            "origin": "Deep ocean",
+            "origin": "All oceans, from surface to deep sea",
             "type": "Invertebrate",
-            "threats": "Climate change, water pollution"
+            "threats": "Overfishing of predators, warming seas, habitat degradation"
+        },
+        {
+            "key": "carp",
+            "name": "Carp",
+            "origin": "Freshwater rivers and lakes in Europe and Asia",
+            "type": "Fish",
+            "threats": "Invasive species competition, habitat destruction, water pollution"
+        },
+        {
+            "key": "guppy",
+            "name": "Guppy",
+            "origin": "Freshwater streams in South America",
+            "type": "Fish",
+            "threats": "Habitat loss, predation, water contamination"
+        },
+        {
+            "key": "red_discus",
+            "name": "Red Discus",
+            "origin": "Amazon River Basin, South America",
+            "type": "Fish",
+            "threats": "Deforestation, water pollution, overfishing for the pet trade"
+        },
+        {
+            "key": "bass",
+            "name": "Bass",
+            "origin": "Freshwater lakes and rivers in North America",
+            "type": "Fish",
+            "threats": "Overfishing, habitat destruction, invasive species"
+        },
+        {
+            "key": "bull_trout",
+            "name": "Bull Trout",
+            "origin": "Cold, clear freshwater rivers in North America",
+            "type": "Fish",
+            "threats": "Climate change, habitat fragmentation, pollution"
+        },
+        {
+            "key": "titan_holefish",
+            "name": "Titan Holefish",
+            "origin": "Deep oceans, near hydrothermal vents",
+            "type": "Fish",
+            "threats": "Deep-sea mining, ocean acidification, habitat disturbance"
+        },
+        {
+            "key": "betta",
+            "name": "Betta Fish",
+            "origin": "Rice paddies and shallow waters in Southeast Asia",
+            "type": "Fish",
+            "threats": "Habitat loss, pollution, overharvesting for the pet trade"
+        },
+        {
+            "key": "crown_jellyfish",
+            "name": "Crown Jellyfish",
+            "origin": "Deep oceans globally, typically in midwater zones",
+            "type": "Invertebrate",
+            "threats": "Climate change, overfishing of predators, microplastic ingestion"
         }
     ]
 }
