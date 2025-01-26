@@ -11,6 +11,7 @@ public class Impact : MonoBehaviour
             system.gameObject.SetActive(true);
             system.Play();
             system.transform.position = new Vector3(collision.transform.position.x, transform.position.y, collision.transform.position.z);
+            this.gameObject.GetComponent<Renderer>().enabled = false;
         }
     }
 }

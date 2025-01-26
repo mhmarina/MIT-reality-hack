@@ -269,6 +269,19 @@ MonoBehaviour:
     action:
       m_PersistentCalls:
         m_Calls: []
+  - dialogueLine: 'Everyday, you interact with plastic. I make your life possible.   '
+    voiceLine: {fileID: 8300000, guid: de0ed36c024bdbe419d2e01ea329c960, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueLine: "According the the UN, \u201CAround the world, one million plastic
+      bottles are purchased every minute, while up to five trillion plastic bags
+      are used worldwide every year. In total, half of all plastic produced is designed
+      for single-use purposes.\u201D"
+    voiceLine: {fileID: 8300000, guid: d1bfb6dd0e12e404ca7cdf3c289f6706, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
   captionText: {fileID: 2970442259845181351}
   audioSource: {fileID: 4736741690369824140}
 --- !u!82 &4736741690369824140

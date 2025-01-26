@@ -260,7 +260,12 @@ MonoBehaviour:
   - dialogueLine: You see? Being at the supposed top of the food chain does not mean
       much nowadays.  The fact remains that I will out live you for generations to
       come!
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: c3854499bdce1964abe1dd33c99f8376, type: 3}
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogueLine: 'Bye friend  '
+    voiceLine: {fileID: 8300000, guid: ad68651b9fd993243bf6b694523a9800, type: 3}
     action:
       m_PersistentCalls:
         m_Calls: []
