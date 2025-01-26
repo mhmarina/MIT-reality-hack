@@ -26,7 +26,7 @@ public class MarineLifeManager : MonoBehaviour
     public TextMeshProUGUI bubbleText; // 显示的文字
     public Dictionary<string, MarineLife> marineLifeDict;
 
-    void Start()
+    void Awake()
     {
         LoadMarineLifeData();
     }
@@ -57,18 +57,21 @@ public class MarineLifeManager : MonoBehaviour
     // 显示信息到泡泡
     public void DisplayInfo(string key)
     {
-        Debug.Log(key);
-        Debug.Log(marineLifeDict[key].name);
-        if (marineLifeDict.TryGetValue(key, out MarineLife life))
-        {
-            bubbleText.text = $"Name: {life.name}\n" +
-                              $"Origin: {life.origin}\n" +
-                              $"Type: {life.type}\n" +
-                              $"Threats: {life.threats}";
+        if(marineLifeDict == null){
+            Debug.Log($"Object {key} not found");
         }
-        else
-        {
-            Debug.LogError($"未找到键 {key} 对应的数据！");
+        else{
+            if (marineLifeDict.TryGetValue(key, out MarineLife life))
+            {
+                bubbleText.text = $"Name: {life.name}\n" +
+                                $"Origin: {life.origin}\n" +
+                                $"Type: {life.type}\n" +
+                                $"Threats: {life.threats}";
+            }
+                else
+            {
+                Debug.LogError($"未找到键 {key} 对应的数据！");
+            }
         }
     }
 }
