@@ -9,6 +9,8 @@ TagManager:
   - Recyclable
   - NonRecyclable
   - Anchor
+  - FxTemporaire
+  - Paul
   layers:
   - Default
   - TransparentFX
