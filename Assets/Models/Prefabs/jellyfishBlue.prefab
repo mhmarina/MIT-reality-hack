@@ -14,19 +14,19 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: fe4038baae7138f4381eafbced389820, type: 2}
     - target: {fileID: 8128668236925612103, guid: 24d4ad61122c52240957f9bfc0444790, type: 3}
       propertyPath: m_Name
-      value: jellyfish 1
+      value: jellyfishBlue
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 24d4ad61122c52240957f9bfc0444790, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.05
+      value: 0.09000001
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 24d4ad61122c52240957f9bfc0444790, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05
+      value: 0.09000001
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 24d4ad61122c52240957f9bfc0444790, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05
+      value: 0.09000001
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 24d4ad61122c52240957f9bfc0444790, type: 3}
       propertyPath: m_LocalPosition.x
@@ -75,5 +75,51 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: 24d4ad61122c52240957f9bfc0444790, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6279826340022140720}
+    - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: 24d4ad61122c52240957f9bfc0444790, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8470016866380283344}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 24d4ad61122c52240957f9bfc0444790, type: 3}
+--- !u!1 &3512867376963738850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8128668236925612103, guid: 24d4ad61122c52240957f9bfc0444790, type: 3}
+  m_PrefabInstance: {fileID: 4615876213553556645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &-6279826340022140720
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512867376963738850}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &8470016866380283344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512867376963738850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2ec4002e57e2a44a2f9d2bb8421f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: jellyfish

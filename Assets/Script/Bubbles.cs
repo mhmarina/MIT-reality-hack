@@ -1,40 +1,50 @@
 ﻿using UnityEngine;
+using System.Collections.Generic; // 用于 List 支持
 
 public class Bubbles : MonoBehaviour
 {
-    public GameObject prefabA; // Prefab A
-    public GameObject prefabB; // Prefab B
-    public GameObject prefabC; // Prefab C
+    public GameObject[] prefabAList; // Prefab A 的候选数组
+    public GameObject[] prefabBList; // Prefab B 的候选数组
+    public GameObject[] prefabCList; // Prefab C 的候选数组
 
-    public Vector3 startPosition = new Vector3(0, 5, 0); // 初始位置
-    public Vector3 targetPositionA = new Vector3(-5, 0, 0); // Prefab A 的目标位置
-    public Vector3 targetPositionB = new Vector3(0, 0, 5); // Prefab B 的目标位置
-    public Vector3 targetPositionC = new Vector3(5, 0, 0); // Prefab C 的目标位置
+    public Vector3 startPosition; // 初始位置，可以在 Inspector 中设置
+    public float floatSpeedA = 1f; // Prefab A 的上升速度
+    public float floatSpeedB = 1.5f; // Prefab B 的上升速度
+    public float floatSpeedC = 2f; // Prefab C 的上升速度
+    public float destroyHeight = 10f; // 到达此高度后销毁
 
-    public float floatSpeed = 1f; // 移动到目标位置的速度
-    public float randomFloatRange = 0.5f; // 小范围随机浮动的范围
-    public float randomFloatSpeed = 1f; // 小范围浮动的速度
+    private int currentCIndex = 0; // 当前使用的 PrefabC 的索引
 
     // 根据索引生成物体
     public void SpawnObject(int index)
     {
         GameObject prefabToSpawn = null;
-        Vector3 targetPosition = Vector3.zero;
+        float floatSpeed = 0f;
 
-        // 根据索引选择生成的物体和目标位置
+        // 根据索引选择生成的物体和对应的上升速度
         switch (index)
         {
-            case 0:
-                prefabToSpawn = prefabA;
-                targetPosition = targetPositionA;
+            case 0: // Prefab A
+                if (prefabAList.Length > 0)
+                {
+                    prefabToSpawn = prefabAList[Random.Range(0, prefabAList.Length)];
+                    floatSpeed = floatSpeedA;
+                }
                 break;
-            case 1:
-                prefabToSpawn = prefabB;
-                targetPosition = targetPositionB;
+            case 1: // Prefab B
+                if (prefabBList.Length > 0)
+                {
+                    prefabToSpawn = prefabBList[Random.Range(0, prefabBList.Length)];
+                    floatSpeed = floatSpeedB;
+                }
                 break;
-            case 2:
-                prefabToSpawn = prefabC;
-                targetPosition = targetPositionC;
+            case 2: // Prefab C
+                if (prefabCList.Length > 0)
+                {
+                    prefabToSpawn = prefabCList[currentCIndex]; // 从候选数组中取当前索引的 PrefabC
+                    floatSpeed = floatSpeedC;
+                    currentCIndex = (currentCIndex + 1) % prefabCList.Length; // 更新索引（循环选择）
+                }
                 break;
         }
 
@@ -43,58 +53,49 @@ public class Bubbles : MonoBehaviour
             // 生成物体
             GameObject instance = Instantiate(prefabToSpawn, startPosition, Quaternion.identity);
 
-            // 添加浮动逻辑
-            FloatingMovement floating = instance.AddComponent<FloatingMovement>();
-            floating.targetPosition = targetPosition;
-            floating.floatSpeed = floatSpeed;
-            floating.randomFloatRange = randomFloatRange;
-            floating.randomFloatSpeed = randomFloatSpeed;
+            // 添加缓慢上升逻辑
+            FloatingUpward floatingLogic = instance.AddComponent<FloatingUpward>();
+            floatingLogic.floatSpeed = floatSpeed;
+            floatingLogic.destroyHeight = destroyHeight;
         }
     }
 
-    // 浮动逻辑
-    private class FloatingMovement : MonoBehaviour
+    // 缓慢上升逻辑
+    private class FloatingUpward : MonoBehaviour
     {
-        public Vector3 targetPosition; // 目标位置
-        public float floatSpeed = 1f; // 移动速度
-        public float randomFloatRange = 0.5f; // 小范围随机浮动的范围
-        public float randomFloatSpeed = 1f; // 小范围浮动的速度
+        public float floatSpeed = 1f; // 上升速度
+        public float destroyHeight = 10f; // 销毁高度
 
-        private Vector3 offset; // 用于小范围浮动的偏移值
-        private bool reachedTarget = false; // 标记是否到达目标位置
-        private float randomOffsetX;
-        private float randomOffsetY;
-        private float randomOffsetZ;
+        private Rigidbody rb;
 
         private void Start()
         {
-            // 随机生成浮动的偏移值
-            randomOffsetX = Random.Range(0f, Mathf.PI * 2f);
-            randomOffsetY = Random.Range(0f, Mathf.PI * 2f);
-            randomOffsetZ = Random.Range(0f, Mathf.PI * 2f);
+            // 确保物体有 Rigidbody
+            rb = GetComponent<Rigidbody>();
+            if (rb == null)
+            {
+                rb = gameObject.AddComponent<Rigidbody>();
+            }
+
+            // 设置 Rigidbody 为 Kinematic
+            rb.isKinematic = true;
+
+            // 确保物体初始角度固定
+            transform.rotation = Quaternion.identity;
         }
 
         private void FixedUpdate()
         {
-            if (!reachedTarget)
-            {
-                // 平滑移动到目标位置
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, floatSpeed * Time.deltaTime);
+            // 锁定物体的旋转
+            transform.rotation = Quaternion.identity;
 
-                // 判断是否到达目标位置
-                if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
-                {
-                    reachedTarget = true; // 设置为到达目标位置
-                }
-            }
-            else
-            {
-                // 在目标位置附近随机浮动
-                offset.x = Mathf.Sin(Time.time * randomFloatSpeed + randomOffsetX) * randomFloatRange;
-                offset.y = Mathf.Cos(Time.time * randomFloatSpeed + randomOffsetY) * randomFloatRange;
-                offset.z = Mathf.Sin(Time.time * randomFloatSpeed + randomOffsetZ) * randomFloatRange;
+            // 缓慢向上移动
+            transform.position += Vector3.up * floatSpeed * Time.deltaTime;
 
-                transform.position = targetPosition + offset;
+            // 检查是否到达销毁高度
+            if (transform.position.y >= destroyHeight)
+            {
+                Destroy(gameObject);
             }
         }
     }
