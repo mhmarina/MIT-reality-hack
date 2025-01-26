@@ -51,8 +51,8 @@ MonoBehaviour:
   Scene3Music: {fileID: 0}
   Scene4Music: {fileID: 8300000, guid: 2fa6f521c9f570e478349d0d00fe41c7, type: 3}
   Scene5Music: {fileID: 8300000, guid: 132b815893fb07c49a9b41d20d77b1e9, type: 3}
-  MusicSource: {fileID: 0}
-  SFXSource: {fileID: 0}
+  MusicSource: {fileID: 3166120236941029333}
+  SFXSource: {fileID: 2841659012417757193}
 --- !u!1 &3356927811763967155
 GameObject:
   m_ObjectHideFlags: 0

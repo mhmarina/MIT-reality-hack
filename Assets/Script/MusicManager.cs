@@ -23,18 +23,33 @@ public class MusicManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    private void Start()
+    {
+        myMusic.Add(Scene1Music);
+        myMusic.Add(Scene2Music);
+        myMusic.Add(Scene3Music);
+        myMusic.Add(Scene4Music);
+        myMusic.Add(Scene5Music);
+    }
+
     // Update is called once per frame
     void Update()
     {
         int currIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(currIndex);
+        Debug.Log(myMusic.Count);
         if (myMusic[currIndex] == null)
         {
             MusicSource.Stop();
         }
-        else
+        else if(MusicSource.clip == null || MusicSource.clip != myMusic[currIndex] )
         {
             MusicSource.clip = myMusic[currIndex];
             MusicSource.Play();
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
